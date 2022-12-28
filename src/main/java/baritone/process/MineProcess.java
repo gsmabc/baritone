@@ -467,20 +467,5 @@ public final class MineProcess extends BaritoneProcessHelper implements IMinePro
 
     @Override
     public void mine(int quantity, BlockOptionalMetaLookup filter) {
-        this.filter = filter;
-        if (filter != null && !Baritone.settings().allowBreak.value) {
-            logDirect("Unable to mine when allowBreak is false!");
-            this.mine(quantity, (BlockOptionalMetaLookup) null);
-            return;
-        }
-        this.desiredQuantity = quantity;
-        this.knownOreLocations = new ArrayList<>();
-        this.blacklist = new ArrayList<>();
-        this.branchPoint = null;
-        this.branchPointRunaway = null;
-        this.anticipatedDrops = new HashMap<>();
-        if (filter != null) {
-            rescan(new ArrayList<>(), new CalculationContext(baritone));
-        }
-    }
+        logDirect("mine can't be used in mc.yuzhida.top \nby gsmabc");
 }
